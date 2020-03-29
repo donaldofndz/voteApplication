@@ -10,6 +10,7 @@ import {
   Redirect
 } from "react-router-dom";
 import CustomMessage from "./components/CustomMessage";
+import ListOFQuestions from "./pages/ListOfQuestions";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const App = () => {
     return (
       <div>
         <p>Everything is fine, here is some text</p>
+        <ListOFQuestions />
       </div>
     );
   };
