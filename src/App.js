@@ -13,6 +13,7 @@ import CustomMessage from "./components/CustomMessage";
 import ListOFQuestions from "./pages/ListOfQuestions";
 import LandingPage from "./pages/LandingPage";
 import NavBar from "./components/Navbar";
+import SingleQuestion from "./pages/SingleQuestion";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -51,7 +52,9 @@ const App = () => {
         <NavBar />
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/listOfQuestions" component={ListOFQuestions} />
+          <Route exact path="/questions" component={ListOFQuestions} />
+          <Route exact path="/questions/:id" component={SingleQuestion} />
+          <Redirect to="/" />
         </Switch>
       </Router>
     </Container>

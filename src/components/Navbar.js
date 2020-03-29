@@ -18,7 +18,7 @@ export default function NavBar() {
           md={3}
           style={{ textAlign: "center", marginTop: "1em" }}
         >
-          <Link to="/listOfQuestions">List Of Questions</Link>
+          <Link to="/questions">List Of Questions</Link>
         </Grid>
         <Grid
           item

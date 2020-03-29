@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Grid, Box } from "@material-ui/core/";
+import { Link } from "react-router-dom";
+import { Grid, Box, Button } from "@material-ui/core/";
 import "./gridOfQuestions.css";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -22,6 +23,31 @@ export default function GridOfQuestions(props) {
   );
 }
 
+const QuestionMainInfo = props => (
+  <Grid item xs={12} md={9}>
+    <QuestionText
+      description={"Question"}
+      value={props.question}
+    ></QuestionText>
+    <QuestionText
+      description={"Date"}
+      value={
+        props.formatDate.getDate() +
+        "-" +
+        (props.formatDate.getMonth() + 1) +
+        "-" +
+        props.formatDate.getFullYear() +
+        " " +
+        props.formatDate.getHours() +
+        ":" +
+        props.formatDate.getMinutes() +
+        ":" +
+        props.formatDate.getSeconds()
+      }
+    ></QuestionText>
+  </Grid>
+);
+
 const Question = props => {
   const initialQuestionState = {
     showQuestions: false
@@ -43,26 +69,16 @@ const Question = props => {
 
   return (
     <Box marginBottom={2} marginTop={2} padding={2} className="question">
-      <QuestionText
-        description={"Question"}
-        value={props.question}
-      ></QuestionText>
-      <QuestionText
-        description={"Date"}
-        value={
-          formatDate.getDate() +
-          "-" +
-          (formatDate.getMonth() + 1) +
-          "-" +
-          formatDate.getFullYear() +
-          " " +
-          formatDate.getHours() +
-          ":" +
-					formatDate.getMinutes() +
-					":" +
-          formatDate.getSeconds()
-        }
-      ></QuestionText>
+      <Grid container>
+        <QuestionMainInfo formatDate={formatDate} question={props.question} />
+        <Grid container xs={12} md={3} alignItems="center">
+          <Button variant="outlined" color="primary">
+            <Link style={{ color: "#3f51b5" }} to={props.url}>
+              Show Question Details
+            </Link>
+          </Button>
+        </Grid>
+      </Grid>
       {questionState.showQuestions ? (
         <Box>
           <QuestionText description={"Choices"} value={""}></QuestionText>
