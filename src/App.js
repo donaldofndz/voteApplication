@@ -37,33 +37,30 @@ const App = () => {
       );
 
     return (
-      <div>
-        <ListOFQuestions />
-      </div>
+      <Container>
+        <Grid item style={{ textAlign: "center" }}>
+          <p
+            style={{ fontSize: "2.3em", fontWeight: "200", lineHeight: "2em" }}
+          >
+            VoteApp
+          </p>
+        </Grid>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/questions" component={ListOFQuestions} />
+            <Route exact path="/questions/:id" component={SingleQuestion} />
+            <Route exact path="/searchquestion" component={SearchQuestion} />
+            <Route exact path="/createquestion" component={CreateQuestion} />
+            <Redirect to="/" />
+          </Switch>
+        </Router>
+      </Container>
     );
   };
 
-  return (
-    <Container>
-      <Grid item style={{ textAlign: "center" }}>
-        <p style={{ fontSize: "2.3em", fontWeight: "200", lineHeight: "2em" }}>
-          VoteApp
-        </p>
-      </Grid>
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/questions" component={ListOFQuestions} />
-          <Route exact path="/questions/:id" component={SingleQuestion} />
-          <Route exact path="/searchquestion" component={SearchQuestion} />
-          <Route exact path="/createquestion" component={CreateQuestion} />
-          <Redirect to="/" />
-        </Switch>
-      </Router>
-    </Container>
-  );
+  return <div>{renderPage()}</div>;
 };
 
-// <Router>{renderPage()}</Router>
 export default App;

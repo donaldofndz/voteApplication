@@ -39,7 +39,6 @@ export function fetchQuest(endPoint) {
     try {
       const response = await fetch(endPoint);
       const data = await response.json();
-      console.log(await data)
       dispatch(getQuestSuccess(data));
     } catch (error) {
       dispatch(getQuestFailure());

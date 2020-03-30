@@ -34,7 +34,7 @@ export default function NavBar() {
           md={3}
           style={{ textAlign: "center", marginTop: "1em" }}
         >
-          <Link to="/SearchQuestion">New Queston</Link>
+          <Link to="/createquestion">New Question</Link>
         </Grid>
       </Grid>
       <hr style={{ marginTop: "1.5em", borderColor: "#fafafa" }} />

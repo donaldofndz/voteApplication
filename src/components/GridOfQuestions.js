@@ -71,7 +71,7 @@ const Question = props => {
     <Box marginBottom={2} marginTop={2} padding={2} className="question">
       <Grid container>
         <QuestionMainInfo formatDate={formatDate} question={props.question} />
-        <Grid container xs={12} md={3} alignItems="center">
+        <Grid container item xs={12} md={3} alignItems="center">
           <Button variant="outlined" color="primary">
             <Link style={{ color: "#3f51b5" }} to={props.url}>
               Show Question Details

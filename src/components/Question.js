@@ -23,12 +23,35 @@ const QuestionInfo = props => (
 export default function Question(props) {
   const { question, published_at, choices, voteForChoice } = props;
 
+  const parseISOString = s => {
+    if (s === undefined) return new Date();
+    var b = s.split(/\D+/);
+    return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
+  };
+
+  const formatDate = parseISOString(published_at);
+
   return (
     <Grid container style={{ marginTop: "3em" }}>
       <Grid item xs={12} md={5}>
         <Box>
           <QuestionInfo title="Question" info={question}></QuestionInfo>
-          <QuestionInfo title="Date" info={published_at}></QuestionInfo>
+          <QuestionInfo
+            title="Date"
+            info={
+              formatDate.getDate() +
+              "-" +
+              (formatDate.getMonth() + 1) +
+              "-" +
+              formatDate.getFullYear() +
+              " " +
+              formatDate.getHours() +
+              ":" +
+              formatDate.getMinutes() +
+              ":" +
+              formatDate.getSeconds()
+            }
+          ></QuestionInfo>
         </Box>
       </Grid>
       <Grid item xs={12} md={7}>
@@ -52,7 +75,6 @@ function Choices(props) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {console.log(props.choices)}
               {props.choices.map((choice, index) => (
                 <TableRow key={index}>
                   <TableCell>{choice.choice}</TableCell>

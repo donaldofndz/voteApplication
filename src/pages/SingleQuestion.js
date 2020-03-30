@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchQuest, questSelector } from "../slices/quest";
+import { apiRootSelector } from "../slices/apiRoot";
 import Question from "../components/Question";
 import CustomMessage from "../components/CustomMessage";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const SingleQuestion = ({ match }) => {
-  console.log("match", match);
   const dispatch = useDispatch();
   const { id } = match.params;
   const { loading, hasErrors, question } = useSelector(questSelector);
   const initialQuestionState = {
     vote: false
   };
+  const { apiRoot } = useSelector(apiRootSelector);
   const [questionState, setQuestionState] = useState(initialQuestionState);
 
   useEffect(() => {
-    const urlRequest = "https://polls.apiblueprint.org/questions/" + id;
+    const urlRequest = `https://polls.apiblueprint.org${apiRoot.questions_url}/${id}`;
     dispatch(fetchQuest(urlRequest));
   }, [dispatch]);
 

@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchQuestList, questListSelector } from "../slices/questList";
+import { apiRootSelector } from "../slices/apiRoot";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import CustomMessage from "../components/CustomMessage"
+import CustomMessage from "../components/CustomMessage";
 import GridOfQuestions from "../components/GridOfQuestions";
 
 export default function ListOFQuestions() {
@@ -10,8 +11,13 @@ export default function ListOFQuestions() {
   const { questList, loading, isEmpty, hasErrors } = useSelector(
     questListSelector
   );
+
+  const { apiRoot } = useSelector(apiRootSelector);
+
   useEffect(() => {
-    dispatch(fetchQuestList("https://polls.apiblueprint.org/questions?"));
+    dispatch(
+      fetchQuestList(`https://polls.apiblueprint.org${apiRoot.questions_url}`)
+    );
   }, [dispatch]);
 
   const renderPage = () => {
