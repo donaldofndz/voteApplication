@@ -6,6 +6,7 @@ import CustomMessage from "../components/CustomMessage";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const SingleQuestion = ({ match }) => {
+  console.log("match", match);
   const dispatch = useDispatch();
   const { id } = match.params;
   const { loading, hasErrors, question } = useSelector(questSelector);
@@ -37,12 +38,7 @@ const SingleQuestion = ({ match }) => {
 
   const renderSingleQuestion = () => {
     if (questionState.vote) {
-      return (
-        <CustomMessage
-          color="success"
-          title="Thanks for voting"
-        />
-      );
+      return <CustomMessage color="success" title="Thanks for voting" />;
     }
     if (loading) {
       return <CircularProgress />;

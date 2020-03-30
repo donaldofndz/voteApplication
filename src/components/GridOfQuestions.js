@@ -88,7 +88,7 @@ const Question = props => {
               className="question__link"
               onClick={() => updateQuestionState(false)}
             >
-              Hide choices <span className="question__title--bold"> - </span>
+              Hide Results <span className="question__title--bold"> - </span>
             </p>
           </Box>
         </Box>
@@ -98,7 +98,7 @@ const Question = props => {
             className="question__link"
             onClick={() => updateQuestionState(true)}
           >
-            Show choices <span className="question__title--bold"> + </span>
+            Show Results <span className="question__title--bold"> + </span>
           </p>
         </Box>
       )}

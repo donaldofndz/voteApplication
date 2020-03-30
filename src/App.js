@@ -14,6 +14,8 @@ import ListOFQuestions from "./pages/ListOfQuestions";
 import LandingPage from "./pages/LandingPage";
 import NavBar from "./components/Navbar";
 import SingleQuestion from "./pages/SingleQuestion";
+import SearchQuestion from "./pages/SearchQuestion";
+import CreateQuestion from "./pages/CreateQuestion";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -54,6 +56,8 @@ const App = () => {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/questions" component={ListOFQuestions} />
           <Route exact path="/questions/:id" component={SingleQuestion} />
+          <Route exact path="/searchquestion" component={SearchQuestion} />
+          <Route exact path="/createquestion" component={CreateQuestion} />
           <Redirect to="/" />
         </Switch>
       </Router>
