@@ -15,9 +15,7 @@ export default function SearchQuestion() {
     <Grid container>
       <Grid item xs={12}>
         <Box padding={3}>
-          <p
-            style={{ fontSize: "1.8em", fontWeight: "100", lineHeight: "2em" }}
-          >
+          <p className="searchQuestion__title">
             Do you know the ID of the question?
           </p>
           <TextField
@@ -36,7 +34,7 @@ export default function SearchQuestion() {
               }
             >
               <Link
-                style={{ color: "#fff" }}
+                className="searchQuestion__link"
                 to={`/questions/${searchQuestion.idQuestion}`}
               >
                 Ir

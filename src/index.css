@@ -1,3 +1,93 @@
 html {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Main Page */
+
+.titleMain {
+  text-align: center;
+}
+
+.titleMain__text {
+  font-size: 2.3em;
+  font-weight: 200;
+  line-height: 2em;
+}
+
+/* Search Question Page */
+
+.searchQuestion__title {
+  font-size: 1.8em;
+  font-weight: 100;
+  line-height: 2em;
+}
+
+.searchQuestion__link {
+  color: white;
+}
+
+/* Landing Page */
+
+.landingPage__title {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 2.2em;
+}
+
+.landingPage__title--2 {
+  font-size: 1.8em;
+  font-weight: 100;
+  line-height: 2em;
+}
+
+.landingPage__title--text {
+  color: #3f51b5;
+  font-weight: 500;
+}
+
+.landingPage__square__title {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.landingPage__square__links {
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+/* Create Question */
+
+.createQuestion__title {
+  font-size: 1.8em;
+  font-weight: 100;
+}
+
+.createQuestion__title--2 {
+  font-size: 1em;
+  font-weight: 200;
+  margin-bottom: 2em;
+}
+
+.createQuestion__choices {
+  margin-left: 0.5em;
+}
+
+.createQuestion__choices--inside {
+  font-weight: bold;
+}
+
+/* NavBar */
+
+.navBar {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.navBar__item {
+  text-align: center;
+  margin-top: 1em;
+}
+.navBar__line {
+  margin-top: 1.5em;
+  border-color: #fafafa;
 }

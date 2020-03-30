@@ -25,12 +25,20 @@
 }
 
 .question__link {
-    cursor: pointer;
-    color:#3f51b5;
+  cursor: pointer;
+  color: #3f51b5;
 }
 
-.question__link--bottom{
-    cursor: pointer;
-    color:#3f51b5;
-    margin-top: 10px;
+.question__link--bottom {
+  cursor: pointer;
+  color: #3f51b5;
+  margin-top: 10px;
+}
+
+.question__details {
+  color: #3f51b5;
+}
+
+.question__choices {
+  border: solid 1px #e0e0e0;
 }

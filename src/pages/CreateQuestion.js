@@ -30,7 +30,7 @@ export default function CreateQuestion() {
     submit: false
   };
   const [createQuestion, setCreateQuestion] = useState(initialFormState);
-  const { apiRoot } = useSelector(apiRootSelector);
+  const { apiRoot, domain } = useSelector(apiRootSelector);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -48,7 +48,7 @@ export default function CreateQuestion() {
   };
 
   const submitQuestion = event => {
-    fetch(`https://polls.apiblueprint.org${apiRoot.questions_url}?`, {
+    fetch(`${domain}${apiRoot.questions_url}?`, {
       method: "POST",
       body: JSON.stringify({
         question: createQuestion.question,
@@ -72,9 +72,7 @@ export default function CreateQuestion() {
       )}
       <Grid item xs={12}>
         <Box paddingX={3}>
-          <p style={{ fontSize: "1.8em", fontWeight: "100" }}>
-            Create Question
-          </p>
+          <p className="createQuestion__title">Create Question</p>
         </Box>
         <Box paddingX={3}>
           <CreateQuestionInput
@@ -87,14 +85,8 @@ export default function CreateQuestion() {
       </Grid>
       <Grid item xs={12}>
         <Box paddingX={3}>
-          <p style={{ fontSize: "1.8em", fontWeight: "100" }}>Create Choices</p>
-          <p
-            style={{
-              fontSize: "1em",
-              fontWeight: "200",
-              marginBottom: "2em"
-            }}
-          >
+          <p className="createQuestion__title">Create Choices</p>
+          <p className="createQuestion__title--2">
             Separete with commas the differents choices, for example: pytho,
             ruby, JS
           </p>
@@ -110,17 +102,13 @@ export default function CreateQuestion() {
           </Box>
         </Box>
         {createQuestion.choices.length > 1 && (
-          <p
-            style={{
-              fontSize: "1em",
-              fontWeight: "200",
-              marginBottom: "2em"
-            }}
-          >
+          <p className="createQuestion__title--2">
             Current Choices:
             {createQuestion.choices.map((element, index) => (
-              <span key={index} style={{ marginLeft: ".5em" }}>
-                <span style={{ fontWeight: "bold" }}>{index + 1}</span>
+              <span key={index} className="createQuestion__choices">
+                <span className="createQuestion__choices--inside">
+                  {index + 1}
+                </span>
                 {": "}
                 {element}
               </span>

@@ -1,0 +1,19 @@
+.question_in {
+    margin-top: 3em;
+}
+
+.question__tablecell {
+  text-align: center;
+}
+
+.question__info__title {
+  font-size: 0.8em;
+  font-weight: 200;
+  margin-bottom: 0.5em;
+}
+
+.question__info__title--2 {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: 0px;
+}

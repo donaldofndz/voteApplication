@@ -16,13 +16,15 @@ import NavBar from "./components/Navbar";
 import SingleQuestion from "./pages/SingleQuestion";
 import SearchQuestion from "./pages/SearchQuestion";
 import CreateQuestion from "./pages/CreateQuestion";
+import Constants from "./constants/Constants";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { apiRoot, loading, hasErrors } = useSelector(apiRootSelector);
+  const { apiRoot, loading, hasErrors, domain } = useSelector(apiRootSelector);
+  const constants = new Constants();
 
   useEffect(() => {
-    dispatch(fetchApiRoot("https://polls.apiblueprint.org"));
+    dispatch(fetchApiRoot(constants.getUrl().url));
   }, [dispatch]);
 
   const renderPage = () => {
@@ -38,12 +40,8 @@ const App = () => {
 
     return (
       <Container>
-        <Grid item style={{ textAlign: "center" }}>
-          <p
-            style={{ fontSize: "2.3em", fontWeight: "200", lineHeight: "2em" }}
-          >
-            VoteApp
-          </p>
+        <Grid item className="titleMain">
+          <p className="titleMain__text">VoteApp</p>
         </Grid>
         <Router>
           <NavBar />

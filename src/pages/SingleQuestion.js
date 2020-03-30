@@ -13,21 +13,21 @@ const SingleQuestion = ({ match }) => {
   const initialQuestionState = {
     vote: false
   };
-  const { apiRoot } = useSelector(apiRootSelector);
+  const { apiRoot, domain } = useSelector(apiRootSelector);
   const [questionState, setQuestionState] = useState(initialQuestionState);
 
   useEffect(() => {
-    const urlRequest = `https://polls.apiblueprint.org${apiRoot.questions_url}/${id}`;
+    const urlRequest = `${domain}${apiRoot.questions_url}/${id}`;
     dispatch(fetchQuest(urlRequest));
   }, [dispatch]);
 
   const voteForChoice = url => {
-    fetch(`https://polls.apiblueprint.org${url}`, { method: "POST" })
+    fetch(`${domain}${url}`, { method: "POST" })
       .then(function(response) {
         return response.json();
       })
       .then(function(response) {
-        return fetchQuest(`https://polls.apiblueprint.org/questions/${id}`);
+        return fetchQuest(`${domain}${apiRoot.questions_url}${id}`);
       })
       .then(function(response) {
         dispatch(response);

@@ -12,11 +12,11 @@ export default function ListOFQuestions() {
     questListSelector
   );
 
-  const { apiRoot } = useSelector(apiRootSelector);
+  const { apiRoot, domain } = useSelector(apiRootSelector);
 
   useEffect(() => {
     dispatch(
-      fetchQuestList(`https://polls.apiblueprint.org${apiRoot.questions_url}`)
+      fetchQuestList(`${domain}${apiRoot.questions_url}`)
     );
   }, [dispatch]);
 

@@ -73,7 +73,7 @@ const Question = props => {
         <QuestionMainInfo formatDate={formatDate} question={props.question} />
         <Grid container item xs={12} md={3} alignItems="center">
           <Button variant="outlined" color="primary">
-            <Link style={{ color: "#3f51b5" }} to={props.url}>
+            <Link className="question__details" to={props.url}>
               Show Question Details
             </Link>
           </Button>
@@ -108,7 +108,7 @@ const Question = props => {
 
 function Choices(props) {
   return (
-    <Box style={{ border: "solid 1px #e0e0e0" }}>
+    <Box className="question__choices">
       <TableContainer>
         <Table>
           <TableHead>

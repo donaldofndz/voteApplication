@@ -7,7 +7,7 @@ export default function NavBar() {
   return (
     <Box>
       <Grid container justify="space-evenly">
-        <Grid item xs={12} md={3} style={{ textAlign: "center", marginTop: "1em"  }}>
+        <Grid item xs={12} md={3} className="navBar">
           <Box>
             <Link to="/">Instructions</Link>
           </Box>
@@ -16,7 +16,7 @@ export default function NavBar() {
           item
           xs={12}
           md={3}
-          style={{ textAlign: "center", marginTop: "1em" }}
+          className="navBar__item"
         >
           <Link to="/questions">List Of Questions</Link>
         </Grid>
@@ -24,7 +24,7 @@ export default function NavBar() {
           item
           xs={12}
           md={3}
-          style={{ textAlign: "center", marginTop: "1em" }}
+          className="navBar__item"
         >
           <Link to="/SearchQuestion">Serch Question</Link>
         </Grid>
@@ -32,12 +32,12 @@ export default function NavBar() {
           item
           xs={12}
           md={3}
-          style={{ textAlign: "center", marginTop: "1em" }}
+          className="navBar__item"
         >
           <Link to="/createquestion">New Question</Link>
         </Grid>
       </Grid>
-      <hr style={{ marginTop: "1.5em", borderColor: "#fafafa" }} />
+      <hr className="navBar__line" />
     </Box>
   );
 }

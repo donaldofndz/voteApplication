@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Constants from "../constants/Constants";
+
+const constants = new Constants();
 
 export const initialState = {
   loading: false,
@@ -17,6 +20,7 @@ const apiRootSlice = createSlice({
       state.apiRoot = payload;
       state.loading = false;
       state.hasErrors = false;
+      state.domain = constants.getUrl().url;
     },
     getApiRootFailure: state => {
       state.loading = false;

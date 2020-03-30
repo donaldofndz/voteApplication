@@ -6,15 +6,16 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import './question.css'
 
 const QuestionInfo = props => (
   <div>
     <span
-      style={{ fontSize: "0.8em", fontWeight: "200", marginBottom: ".5em" }}
+      className="question__info__title"
     >
       {props.title}:
     </span>
-    <p style={{ fontSize: "1.2em", fontWeight: "500", marginTop: "0" }}>
+    <p className="question__info__title--2">
       {props.info}
     </p>
   </div>
@@ -70,18 +71,18 @@ function Choices(props) {
             <TableHead>
               <TableRow>
                 <TableCell>Choice</TableCell>
-                <TableCell style={{ textAlign: "center" }}>Votes</TableCell>
-                <TableCell style={{ textAlign: "center" }}>Action</TableCell>
+                <TableCell className="question__tablecell">Votes</TableCell>
+                <TableCell className="question__tablecell">Action</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {props.choices.map((choice, index) => (
                 <TableRow key={index}>
                   <TableCell>{choice.choice}</TableCell>
-                  <TableCell style={{ textAlign: "center" }}>
+                  <TableCell className="question__tablecell">
                     {choice.votes}
                   </TableCell>
-                  <TableCell style={{ textAlign: "center" }}>
+                  <TableCell className="question__tablecell">
                     <Button
                       variant="contained"
                       color="primary"
