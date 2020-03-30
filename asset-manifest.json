@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/voteapplication/static/css/main.08d0dd61.chunk.css",
+    "main.js": "/voteapplication/static/js/main.a1cf0b3d.chunk.js",
+    "main.js.map": "/voteapplication/static/js/main.a1cf0b3d.chunk.js.map",
+    "runtime-main.js": "/voteapplication/static/js/runtime-main.deb537c4.js",
+    "runtime-main.js.map": "/voteapplication/static/js/runtime-main.deb537c4.js.map",
+    "static/js/2.4df14e32.chunk.js": "/voteapplication/static/js/2.4df14e32.chunk.js",
+    "static/js/2.4df14e32.chunk.js.map": "/voteapplication/static/js/2.4df14e32.chunk.js.map",
+    "index.html": "/voteapplication/index.html",
+    "precache-manifest.fabf1485f6000a6ce42557992516bba2.js": "/voteapplication/precache-manifest.fabf1485f6000a6ce42557992516bba2.js",
+    "service-worker.js": "/voteapplication/service-worker.js",
+    "static/css/main.08d0dd61.chunk.css.map": "/voteapplication/static/css/main.08d0dd61.chunk.css.map",
+    "static/js/2.4df14e32.chunk.js.LICENSE.txt": "/voteapplication/static/js/2.4df14e32.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.deb537c4.js",
+    "static/js/2.4df14e32.chunk.js",
+    "static/css/main.08d0dd61.chunk.css",
+    "static/js/main.a1cf0b3d.chunk.js"
+  ]
+}
